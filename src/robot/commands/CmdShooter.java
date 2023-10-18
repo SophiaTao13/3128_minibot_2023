@@ -49,9 +49,9 @@ public class CmdShooter extends CommandBase {
     @Override
     public void execute() {
 
-        int speed = m_subsystem.m_encoder.getSpeed();
+         int speed = m_subsystem.m_encoder.getSpeed();
 
-        Logger.log("TestShooterCommand", 1, String.format("Speed = %d", speed));
+         Logger.log("TestShooterCommand", 1, String.format("Speed = %d", speed));
     }
 
     // Make this return true when this Command no longer needs to run execute()
