@@ -36,7 +36,6 @@ public class CmdArcadeDrive extends CommandBase {
    * @param subsystem The subsystem used by this command.
    */
   public CmdArcadeDrive(DriveSubsystem subsystem, NAR_Joystick joystick) {
-    Logger.log("ArcadeDriveCommand", 3, "ArcadeDriveCommand()");
 
     m_subsystem = subsystem;
     m_joystick = joystick;
@@ -47,13 +46,13 @@ public class CmdArcadeDrive extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    Logger.log("ArcadeDriveCommand", 2, "initialize()");
+  
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Logger.log("ArcadeDriveCommand", -1, "execute()");
+
 
     double y = m_joystick.getY();
     double x = m_joystick.getX();
@@ -68,13 +67,12 @@ public class CmdArcadeDrive extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    Logger.log("ArcadeDriveCommand", 2, String.format("end(%b)", interrupted));
+
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    Logger.log("ArcadeDriveCommand", -1, "isFinished()");
     return false;
   }
 }

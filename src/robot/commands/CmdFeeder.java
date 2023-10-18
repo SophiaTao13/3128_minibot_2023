@@ -32,7 +32,7 @@ public class CmdFeeder extends CommandBase {
 	private double power;
 
 	public CmdFeeder(FeederSubsystem subsystem, double power) {
-		Logger.log("FeederCommand", 3, "FeederCommand()");
+	
 		this.power = power;
 		m_subsystem = subsystem;
 		m_encoder = m_subsystem.getEncoder();
@@ -44,7 +44,6 @@ public class CmdFeeder extends CommandBase {
 	// Called just before this Command runs the first time
 	@Override
 	public void initialize() {
-		Logger.log("FeederCommand", 2, "initialize()");
 
 		m_subsystem.setPower(power);
 	}
@@ -52,7 +51,6 @@ public class CmdFeeder extends CommandBase {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	public void execute() {
-		Logger.log("FeederCommand", -1, "execute()");
 
 		Logger.log("FeederCommand", 1, String.format("Speed = %d", m_encoder.getSpeed()));
 	}
@@ -66,7 +64,6 @@ public class CmdFeeder extends CommandBase {
 	// Called once after isFinished returns true
 	@Override
 	public void end(boolean interrupted) {
-		Logger.log("FeederCommand", 2, "end()");
 
 		m_subsystem.setPower(0);
 	}

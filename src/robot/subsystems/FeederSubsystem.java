@@ -21,7 +21,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import robotCore.Device;
 import robotCore.Encoder;
 import robotCore.Encoder.EncoderType;
-import robotCore.Logger;
 import robotCore.PWMMotor;
 import static robot.Constants.FeederConstants.*;
 
@@ -34,11 +33,11 @@ public class FeederSubsystem extends SubsystemBase {
 	private Encoder m_encoder = new Encoder(EncoderType.Quadrature, k_encPin1, k_encPin2);
 
 	public FeederSubsystem() {
-		Logger.log("FeederSubsystem", 2, "Constructor");
+		
 	}
 
 	public void initDefaultCommand() {
-		Logger.log("FeederSubsystem", 2, "initDefaultCommand()");
+		
 	}
 
 	public void setPower(double power) {

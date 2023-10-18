@@ -21,7 +21,6 @@ package robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import robotCore.Device;
 import robotCore.Encoder;
-import robotCore.Logger;
 import robotCore.PWMMotor;
 import robotCore.Encoder.EncoderType;
 import static robot.Constants.TurnTableConstants.*;
@@ -35,11 +34,11 @@ public class TurntableSubsystem extends SubsystemBase {
 	private Encoder m_encoder = new Encoder(EncoderType.Quadrature, k_encoderIntPin, k_encoderDirPin);
 
 	public TurntableSubsystem() {
-		Logger.log("TurntableSubsystem", 2, "TurntableSubsystem()");
+		
 	}
 
 	public void initDefaultCommand() {
-		Logger.log("TurntableSubsystem", 2, "initDefaultCommand()");
+	
 	}
 
 	public void setPower(double power) {
@@ -53,6 +52,6 @@ public class TurntableSubsystem extends SubsystemBase {
 
 	@Override
 	public void periodic() {
-		Logger.log("TurntableSubsystem", -1, "periodic()");
+		
 	}
 }

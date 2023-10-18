@@ -32,10 +32,9 @@ public class CmdTurntable extends CommandBase {
     private double power;
 
     public CmdTurntable(TurntableSubsystem subsystem, double power) {
-        Logger.log("TestTurntableCommand", 3, "TestTurntableCommand()");
         this.power = power;
         m_subsystem = subsystem;
-        m_encoder = m_subsystem.getEncoder();
+        m_encoder = m_subsystem.getEncoder(); 
 
         // Use requires() here to declare subsystem dependencies
         addRequirements(m_subsystem);
@@ -44,7 +43,6 @@ public class CmdTurntable extends CommandBase {
     // Called just before this Command runs the first time
     @Override
     public void initialize() {
-        Logger.log("TestTurntableCommand", 2, "initialize()");
 
         m_subsystem.setPower(power);
 
@@ -53,7 +51,6 @@ public class CmdTurntable extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     @Override
     public void execute() {
-        Logger.log("TestTurntableCommand", -1, "execute()");
 
         Logger.log("TestTurntableCommand", 1, String.format("Speed = %d", m_encoder.getSpeed()));
 
@@ -62,7 +59,6 @@ public class CmdTurntable extends CommandBase {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     public boolean isFinished() {
-        Logger.log("TestTurntableCommand", -1, "isFinished()");
 
         return (false);
     }
@@ -70,7 +66,6 @@ public class CmdTurntable extends CommandBase {
     // Called once after isFinished returns true
     @Override
     public void end(boolean interrupted) {
-        Logger.log("TestTurntableCommand", 2, "end()");
 
         m_subsystem.setPower(0);
     }

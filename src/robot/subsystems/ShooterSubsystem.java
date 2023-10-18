@@ -23,7 +23,6 @@ import robotCore.Device;
 import robotCore.Encoder;
 import robotCore.Encoder.EncoderType;
 import robotCore.SmartMotor.SmartMotorMode;
-import robotCore.Logger;
 import robotCore.PWMMotor;
 import static robot.Constants.ShooterConstants.*;
 
@@ -41,17 +40,17 @@ public class ShooterSubsystem extends SubsystemBase {
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-        Logger.log("ShooterSubsystem", -1, "periodic()");
+     
     }
 
     public void setSpeed(double speed) {
-        m_motor.setControlMode(SmartMotorMode.Speed);
+        m_motor.setControlMode(SmartMotorMode.Speed); //using speed would be for PID
 
-        m_motor.set(speed);
+        m_motor.set(speed); 
     }
 
     public void setPower(double power) {
-        m_motor.setControlMode(SmartMotorMode.Power);
+        m_motor.setControlMode(SmartMotorMode.Power); 
 
         m_motor.set(power);
     }

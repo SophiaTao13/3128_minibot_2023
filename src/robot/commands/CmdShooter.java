@@ -31,7 +31,6 @@ public class CmdShooter extends CommandBase {
     private double power;
 
     public CmdShooter(ShooterSubsystem subsystem, double power) {
-        Logger.log("TestShooterCommand", 3, "TestShooterCommand()");
         this.power = power;
         m_subsystem = subsystem;
 
@@ -42,8 +41,6 @@ public class CmdShooter extends CommandBase {
     // Called just before this Command runs the first time
     @Override
     public void initialize() {
-        Logger.log("TestShooterCommand", 2, "initialize()");
-        Logger.log("TestShooterCommand", 1, ",Speed,Target");
 
         m_subsystem.setPower(power);
     }
@@ -51,7 +48,6 @@ public class CmdShooter extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     @Override
     public void execute() {
-        Logger.log("TestShooterCommand", -1, "execute()");
 
         int speed = m_subsystem.m_encoder.getSpeed();
 
@@ -61,7 +57,6 @@ public class CmdShooter extends CommandBase {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     public boolean isFinished() {
-        Logger.log("TestShooterCommand", -1, "isFinished()");
 
         return (false);
     }
@@ -69,7 +64,6 @@ public class CmdShooter extends CommandBase {
     // Called once after isFinished returns true
     @Override
     public void end(boolean interrupted) {
-        Logger.log("TestShooterCommand", 2, "end()");
 
         m_subsystem.setPower(0);
     }

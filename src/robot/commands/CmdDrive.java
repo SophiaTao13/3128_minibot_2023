@@ -69,7 +69,6 @@ public class CmdDrive extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     @Override
     public void execute() {
-        Logger.log("TestDriveCommand", -1, "execute()");
         Logger.log("TestDriveCommand", 1, String.format("Left = %d,Right = %d", m_leftEncoder.getSpeed(), m_rightEncoder.getSpeed()));
 
         if (m_timer.get() >= 2)
